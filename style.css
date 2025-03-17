@@ -1134,4 +1134,53 @@ body {
     75% { transform: translate(20vw, 40vh); }
 }
 
+/* Fluid shape styling */
+.fluid-shape {
+    width: 300px;
+    height: 300px;
+    position: relative;
+    overflow: hidden;
+    border-radius: 63% 37% 56% 44% / 46% 49% 51% 54%;
+    animation: morph 12s infinite linear;
+    background: var(--main-color);
+    padding: 8px;
+}
 
+.fluid-shape img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: inherit;
+    filter: grayscale(20%);
+    transition: filter 0.3s ease;
+}
+
+/* Fluid animation */
+@keyframes morph {
+    0% { border-radius: 63% 37% 56% 44% / 46% 49% 51% 54%; }
+    33% { border-radius: 45% 55% 62% 38% / 51% 44% 56% 49%; }
+    66% { border-radius: 55% 45% 39% 61% / 59% 53% 47% 41%; }
+    100% { border-radius: 63% 37% 56% 44% / 46% 49% 51% 54%; }
+}
+
+/* Optional glowing border effect */
+.fluid-shape::before {
+    content: '';
+    position: absolute;
+    inset: -3px;
+    background: linear-gradient(45deg, 
+        var(--main-color), 
+        var(--second-bg-color), 
+        var(--main-color));
+    z-index: -1;
+    border-radius: inherit;
+    animation: 
+        morph 12s infinite linear,
+        rotate 8s linear infinite;
+    opacity: 0.4;
+}
+
+@keyframes rotate {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
