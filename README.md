@@ -1,5 +1,5 @@
 # Kathan Joshi's Portfolio Website  
-**Live Demo:** https://joshikathan03.github.io/  
+**Live Demo:** https://kathan03.github.io/  
 
 Welcome to the GitHub repository for my professional portfolio showcasing expertise in machine learning, data science, and artificial intelligence. As a Graduate Research Assistant at Pennsylvania State University and former Data Scientist at Sajal Industries, this site demonstrates my technical capabilities through project showcases and professional achievements.
 
