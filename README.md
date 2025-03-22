@@ -15,7 +15,6 @@ This repository contains the complete source code for my portfolio website, whic
 
 - **Web Development:** HTML5, CSS3, JavaScript
 - **UI/UX Enhancements:** ScrollReveal.js, CSS animations, Responsive design techniques
-- **Visualizations:** Integration with tools like Power BI and Tableau for dynamic data displays
 
 ## 🔍 Features
 
