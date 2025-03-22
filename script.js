@@ -1,84 +1,97 @@
-let sections = document.querySelectorAll('section')
-let navLinks = document.querySelectorAll('header nav a')
-let menuIcon = document.querySelector('#menu-icon')
-let navbar = document.querySelector('.navbar')
+// Select DOM elements
+const sections = document.querySelectorAll('section');
+const navLinks = document.querySelectorAll('header nav a');
+const menuIcon = document.querySelector('.hamburger');
+const navbar = document.querySelector('.navbar');
 
-menuIcon.onclick = () => {
-    menuIcon.classList.toggle('bx-x')
-    navbar.classList.toggle('active')
+// Mobile menu functions
+function toggleMenu() {
+    menuIcon.classList.toggle('active');
+    navbar.classList.toggle('active');
 }
 
-// document.addEventListener('DOMContentLoaded', function() {
-//     const contactButton = document.querySelector('.btn-box a[href^="mailto:"]');
-//     contactButton.addEventListener('click', function(event) {
-//         // Remove subject and body to redirect without pre-filled content
-//         this.href = 'mailto:kabirschaturvedi@gmail.com';
-        
-//         // Log or handle the click event as needed
-//         console.log("Contact Me button was clicked.");
-//     });
-// });
+function closeMenu() {
+    menuIcon.classList.remove('active');
+    navbar.classList.remove('active');
+}
 
+// Event listeners
+menuIcon.addEventListener('click', (e) => {
+    e.stopPropagation();
+    toggleMenu();
+});
 
+// Close menu when clicking outside
+document.addEventListener('click', (e) => {
+    if (!navbar.contains(e.target) && !menuIcon.contains(e.target)) {
+        closeMenu();
+    }
+});
 
+// Close menu on scroll
+window.addEventListener('scroll', () => {
+    if (window.innerWidth <= 768 && navbar.classList.contains('active')) {
+        closeMenu();
+    }
+});
+
+// Active section detection
 window.onscroll = () => {
     sections.forEach(sec => {
-        let top = window.scrollY
-        let offset = sec.offsetTop - 100
-        let height = sec.offsetHeight
-        let id = sec.getAttribute('id')
+        const top = window.scrollY;
+        const offset = sec.offsetTop - 100;
+        const height = sec.offsetHeight;
+        const id = sec.getAttribute('id');
 
-        if(top >= offset && top < offset + height) {
-            navLinks.forEach(links => {
-                links.classList.remove('active')
-                document.querySelector('header nav a[href*=' + id + ']').classList.add('active')
-            })
+        if (top >= offset && top < offset + height) {
+            navLinks.forEach(link => {
+                link.classList.remove('active');
+                const linkHref = link.getAttribute('href').replace('#', '');
+                if (linkHref === id) {
+                    link.classList.add('active');
+                }
+            });
         }
-    })
+    });
+};
 
-    menuIcon.classList.remove('bx-x')
-    navbar.classList.remove('active')
-}
-
+// ScrollReveal initialization
 ScrollReveal({
-    reset: true,
+    reset: false,
     distance: '15px',
     duration: 2000,
     delay: 200
 });
 
-ScrollReveal().reveal('.left', {origin: 'left'})
-ScrollReveal().reveal('.right', {origin: 'right'})
-ScrollReveal().reveal('.top', {origin: 'top'})
-ScrollReveal().reveal('.bottom', {origin: 'bottom'})
+ScrollReveal().reveal('.left', { origin: 'left' });
+ScrollReveal().reveal('.right', { origin: 'right' });
+ScrollReveal().reveal('.top', { origin: 'top' });
+ScrollReveal().reveal('.bottom', { origin: 'bottom' });
 
-
+// Typed.js initialization
 const typed = new Typed('.multiple-text', {
     strings: ['Data Scientist', 'AI Enthusiast', 'Tech Innovator'],
     typeSpeed: 100,
     backSpeed: 100,
     backDelay: 1000,
     loop: true
-})
+});
 
 // Particle system initialization
 function initParticles() {
     const container = document.getElementById('particles-container');
     const particleCount = 30;
     
-    for(let i = 0; i < particleCount; i++) {
+    for (let i = 0; i < particleCount; i++) {
         const particle = document.createElement('div');
         particle.className = 'particle';
         
-        // Random initial position
         particle.style.left = `${Math.random() * 100}%`;
         particle.style.top = `${Math.random() * 100}%`;
         
-        // Random animation
         const animationType = `float-${Math.floor(Math.random() * 3) + 1}`;
         particle.style.animation = `${animationType} ${15 + Math.random() * 15}s infinite linear`;
         
-        // Random size variation
         const size = 4 + Math.random() * 8;
         particle.style.width = `${size}px`;
         particle.style.height = `${size}px`;
@@ -87,14 +100,12 @@ function initParticles() {
     }
 }
 
-// Initialize on load
+// Initialize particles
 window.addEventListener('load', initParticles);
 
-// Add to script.js
+// Theme toggle functionality
 document.querySelector('.theme-toggle').addEventListener('click', () => {
     document.body.classList.toggle('light-theme');
-    
-    // Save preference
     const isLight = document.body.classList.contains('light-theme');
     localStorage.setItem('theme', isLight ? 'light' : 'dark');
 });
@@ -102,3 +113,10 @@ document.querySelector('.theme-toggle').addEventListener('click', () => {
 // Initialize theme
 const savedTheme = localStorage.getItem('theme') || 'dark';
 document.body.classList.toggle('light-theme', savedTheme === 'light');
+
+// Handle window resize
+window.addEventListener('resize', () => {
+    if (window.innerWidth > 768 && navbar.classList.contains('active')) {
+        closeMenu();
+    }
+});

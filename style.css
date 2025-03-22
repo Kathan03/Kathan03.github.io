@@ -1613,18 +1613,82 @@ svg, path {
     color: var(--main-color);
 }
 
-/* Mobile Navigation */
+/* Mobile Menu (Right-aligned) */
 @media (max-width: 768px) {
     .navbar {
-        gap: 1rem;
-        padding: 0.5rem;
+        position: fixed;
+        top: 70px;
+        right: -300px;
+        width: 280px;
+        height: calc(100vh - 70px);
+        background: var(--second-bg-color);
+        padding: 2rem;
+        transition: all 0.3s ease-in-out;
+        z-index: 1000;
+        overflow-y: auto;
+        box-shadow: -5px 0 15px rgba(0,0,0,0.1);
     }
-    
+
+    .navbar.active {
+        right: 0;
+    }
+
+    .navbar a {
+        display: flex;
+        align-items: center;
+        gap: 1rem;
+        padding: 1rem;
+        border-radius: 8px;
+        margin-bottom: 0.5rem;
+    }
+
     .navbar i {
         font-size: 1.8rem;
+        min-width: 30px;
     }
-    
-    .navbar .tooltip {
-        display: none;
+
+    /* Hamburger Icon */
+    .hamburger {
+        display: flex;
+        flex-direction: column;
+        gap: 4px;
+        cursor: pointer;
+        z-index: 1001;
     }
+
+    .hamburger span {
+        width: 25px;
+        height: 2px;
+        background: var(--text-color);
+        transition: all 0.3s ease;
+    }
+
+    .hamburger.active span:nth-child(1) {
+        transform: rotate(45deg) translate(5px, 5px);
+    }
+
+    .hamburger.active span:nth-child(2) {
+        opacity: 0;
+    }
+
+    .hamburger.active span:nth-child(3) {
+        transform: rotate(-45deg) translate(5px, -5px);
+    }
+}
+
+/* Active State for All Icons */
+.navbar a.active i {
+    color: var(--main-color);
+}
+
+/* Active State for All Icons */
+.navbar a.active i {
+    color: var(--main-color);
+    filter: drop-shadow(0 0 8px var(--main-color));
+    transition: all 0.3s ease;
+}
+
+/* Specific briefcase icon adjustment if needed */
+.navbar a[href="#experience"].active i.bxs-briefcase {
+    transform: scale(1.1);
 }
