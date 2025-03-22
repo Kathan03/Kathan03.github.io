@@ -38,7 +38,3 @@ Feel free to explore the repository and check out the live demo. If you have any
 
 [![LinkedIn](https://img.shields.io/badge/LinkedIn-Connect-blue?style=flat&logo=linkedin)](https://linkedin.com/in/kjoshi03/)  
 [![Email](https://img.shields.io/badge/Email-Contact-red?style=flat&logo=gmail)](mailto:joshikathan03@gmail.com)
-
-## License
-
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
