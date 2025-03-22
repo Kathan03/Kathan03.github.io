@@ -102,4 +102,3 @@ document.querySelector('.theme-toggle').addEventListener('click', () => {
 // Initialize theme
 const savedTheme = localStorage.getItem('theme') || 'dark';
 document.body.classList.toggle('light-theme', savedTheme === 'light');
-
