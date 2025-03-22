@@ -89,3 +89,17 @@ function initParticles() {
 
 // Initialize on load
 window.addEventListener('load', initParticles);
+
+// Add to script.js
+document.querySelector('.theme-toggle').addEventListener('click', () => {
+    document.body.classList.toggle('light-theme');
+    
+    // Save preference
+    const isLight = document.body.classList.contains('light-theme');
+    localStorage.setItem('theme', isLight ? 'light' : 'dark');
+});
+
+// Initialize theme
+const savedTheme = localStorage.getItem('theme') || 'dark';
+document.body.classList.toggle('light-theme', savedTheme === 'light');
+

@@ -6,33 +6,75 @@
     <title>Kathan Joshi Portfolio</title>
     <link rel="stylesheet" href="style.css">
     <!-- box icons -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, minimum-scale=0.25">
     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <script src="https://unpkg.com/typed.js@2.0.16/dist/typed.umd.js"></script>
     <script src="https://unpkg.com/scrollreveal"></script>
 </head>
 <body>
     <!-- header design -->
-    <header class="header top">
+    <header class="header">
         <a href="#" class="logo">Port<span>folio.</span></a>
-        <div class="bx bx-menu" id="menu-icon"></div>
-    <nav class="navbar">
-        <a href="#home" class="active">Home</a>
-        <a href="#about">About me</a>
-        <a href="#experience">Experience</a>
-        <a href="#education">Education</a>
-        <a href="#tech-stack">Tech Stack</a>
-        <a href="#portfolio">Projects</a>
-    </nav>
+        
+        <div class="header-right">
+            <nav class="navbar">
+                <a href="#home" class="active" aria-label="Home">
+                    <i class='bx bxs-home'></i>
+                    <span class="tooltip">Home</span>
+                </a>
+                <a href="#about" aria-label="About">
+                    <i class='bx bxs-user'></i>
+                    <span class="tooltip">About</span>
+                </a>
+                <a href="#experience" aria-label="Experience">
+                    <i class='bx bxs-briefcase'></i>
+                    <span class="tooltip">Experience</span>
+                </a>
+                <a href="#education" aria-label="Education">
+                    <i class='bx bxs-graduation'></i>
+                    <span class="tooltip">Education</span>
+                </a>
+                <a href="#tech-stack" aria-label="Tech Stack">
+                    <i class='bx bxs-cog'></i>
+                    <span class="tooltip">Tech</span>
+                </a>
+                <a href="#portfolio" aria-label="Work">
+                    <i class='bx bxs-folder'></i>
+                    <span class="tooltip">Work</span>
+                </a>
+                <a href="#certifications" aria-label="Certifications">
+                    <i class='bx bxs-certification'></i>
+                    <span class="tooltip">Certs</span>
+                </a>
+                <a href="#publications" aria-label="Research">
+                    <i class='bx bxs-flask'></i>
+                    <span class="tooltip">Research</span>
+                </a>
+            </nav>
+            
+            <div class="header-controls">
+                <div class="theme-toggle">
+                    <svg class="theme-icon" viewBox="0 0 24 24">
+                        <!-- Sun -->
+                        <path class="sun" d="M12 4V2m0 20v-2m4.95-14.95l1.414-1.414M5.636 18.364L7.05 16.95M20 12h2M2 12h2m14.95 4.95l1.414 1.414M5.636 5.636L7.05 7.05M12 16a4 4 0 1 1 0-8 4 4 0 0 1 0 8z"/>
+                        
+                        <!-- Improved Moon -->
+                        <path class="moon" d="M20.5 15.5a8.5 8.5 0 0 1-11.9-8.9 8.5 8.5 0 1 0 11.9 8.9z"/>
+                    </svg>
+                </div>
+                <div class="bx bx-menu" id="menu-icon"></div>
+            </div>
+        </div>
     </header>
-
     <!-- home section design -->
     <section class="home" id="home">
         <div class="home-info">
             <div class="home-content left">
                 <h1>Hi, <br> I'm <span>Kathan Joshi</span></h1>
                 <h3 class="text-animate">I'm a <span class="multiple-text"></span></h3>
-                <p>Machine Learning Research Assistant @ Penn State | AWS AI Certified | MS Computer Science | Former Data Scientist at Sajal Industries & ISRO | Expertise in ML, Deep Learning, Computer Vision, and Big Data Analytics.</p>
+                <p>Machine Learning Research Assistant @ Penn State | AWS AI Certified | MS Computer Science | Former Data Scientist at Safal Industries & ISRO | Expertise in ML, Deep Learning, Natural Language Processing, Computer Vision, and Big Data Analytics.</p>
             </div>
             
             <div class="home-sci">
@@ -59,8 +101,8 @@
         <div class="about-details right">
             <h2 class="heading">About <span>Me</span></h2>
             <div class="about-content">
-                <h3><span>Machine Learning</span> Engineer</h3>
-                <p>Data Science professional with expertise in developing production-grade ML systems. Currently pursuing Master's in Computer Science at Pennsylvania State University. Designed hospital LOS prediction models with 12% performance improvement, built computer vision systems with 92% accuracy, and developed AWS-powered data pipelines handling TB-scale datasets. Certified AWS AI Practitioner with strong background in NLP, deep learning, and distributed computing.</p>
+                <h3><span>Data</span> Scientist</h3>
+                <p>Hello, I'm Kathan Joshi, a Machine Learning Engineer and Data Science professional pursuing my Master's in Computer Science at Pennsylvania State University. I have gained hands-on experience in fast-paced industry environments, contributing to the development of production-grade ML systems and scalable data solutions. I specialize in leveraging technologies like Python, TensorFlow, and AWS to turn complex data into actionable insights. Outside of work, I enjoy playing badminton and volleyball.</p>
             </div>
         </div>
     </section>
@@ -102,8 +144,11 @@
                         <div class="year"><i class="bx bxs-calendar"></i>2019 – 2020</div>
                         <h3>Data Science Intern - ISRO</h3>
                         <ul>
-                            <li>Built Python-based rover control system with 20% higher simulation fidelity</li>
-                            <li>Automated path navigation reducing manual oversight by 15%</li>
+                            <li>Built a virtual rover control system in Python using Vizard7 that simulated real-world physics with 20% elevated
+                                simulation fidelity.</li>
+                            <li>Automated predefined path navigation for the rover, reducing manual oversight by 15%.</li>
+                            <li>Constructed a streamlined data collection framework that integrated rover state data into a local database,
+                                enhancing access by 30% and cutting processing delays.</li>
                         </ul>
                     </div>
                 </div>
@@ -146,20 +191,23 @@
             <div class="tech-category">
                 <h3>Languages & Databases</h3>
                 <ul>
-                    <li>Python, SQL, Java, C/C++, PyTorch, TensorFlow, AWS, Hadoop, Spark</li>
+                    <li>Python, R, SQL, Snowflake, Java, C/C++, Javascript, MySQL, PostgreSQL</li>
                 </ul>
             </div>
             <div class="tech-category">
                 <h3>Data Visualization</h3>
                 <ul>
-                    <li>Power BI, Tableau, Matplotlib, Seaborn, Plotly</li>
+                    <li>Power BI, Tableau, Gephi</li>
                 </ul>
             </div>
             <div class="tech-category">
-                <h3>ML/AI</h3>
+                <h3>Libraries/Frameworks</h3>
                 <ul>
-                    <li>BERT, LSTM, Computer Vision, NLP, SKlearn, NLTK, SpaCy, Transformers</li>
-                    <li>AWS SageMaker, Docker, Linux, Distributed Computing, Model Optimization</li>
+                    <li>Numpy, Pandas, PyTorch, TensorFlow, SKlearn, NLTK, SpaCy, Transformers, Langchain, CrewAI</li>
+                    <li>Apache Hadoop, Apache Spark, Gurobi</li>
+                    <li>Flask, React, Streamlit</li>
+                    <li>AWS, Docker, Git, Linux</li>
+                    <li>Recommendation Systems, Reinforcement Learning</li>
                 </ul>
             </div>
         </div>
@@ -232,6 +280,67 @@
                 </div>
             </div>
 
+        </div>
+    </section>
+
+    <section class="certifications" id="certifications">
+        <h2 class="heading">Certifications</h2>
+        <div class="certifications-container">
+            <div class="certification-box">
+                <div class="certification-content">
+                    <h3>AWS Certified AI Practitioner</h3>
+                    <p>Amazon Web Services | 2024</p>
+                    <div class="certification-badge">
+                        <i class="fab fa-aws"></i>
+                    </div>
+                </div>
+            </div>
+            <div class="certification-box">
+                <div class="certification-content">
+                    <h3>Generative AI with Large Language Models</h3>
+                    <p>Amazon Web Services | 2025</p>
+                    <div class="certification-badge">
+                        <i class="fab fa-aws"></i>
+                    </div>
+                </div>
+            </div>
+            <div class="certification-box">
+                <div class="certification-content">
+                    <h3>Machine Learning Specialization</h3>
+                    <p>DeepLearning.AI | 2024</p>
+                    <div class="certification-badge">
+                        <img src="assets/deeplearning-ai.webp" style="height: 8rem; width: 8rem;">
+                    </div>
+                </div>
+            </div>
+            <div class="certification-box">
+                <div class="certification-content">
+                    <h3>Learning Snowflake DB</h3>
+                    <p>LinkedIN | 2025</p>
+                    <div class="certification-badge">
+                        <i class="fab fa-linkedin"></i>
+                    </div>
+                </div>
+            </div>
+            <!-- Add more certifications -->
+        </div>
+    </section>
+
+    <section class="publications" id="publications">
+        <h2 class="heading">Publications</h2>
+        <div class="publications-container">
+            <div class="publication-item">
+                <h3>Influence of Red Blood Cells on Channel Characterization in Cylindrical Vasculature</h3>
+                <p class="publication-meta">IEEE Transactions on NanoBioScience | 2024</p>
+                <p class="publication-authors">KS Joshi, DK Patel, S Thakker, M López-Benítez, JJ Lehtomäki</p>
+                <a href="https://ieeexplore.ieee.org/abstract/document/10630568" class="publication-link">Read Paper →</a>
+            </div>
+            <div class="publication-item">
+                <h3>Modelling the Impact of Multiple Pro-Inflammatory Cyokines using Molecular Communication</h3>
+                <p class="publication-meta">National Conference on Communications (NCC) | 2022</p>
+                <p class="publication-authors">S Thakker, DK Patel, KS Joshi, M López-Benítez</p>
+                <a href="https://ieeexplore.ieee.org/abstract/document/9806804" class="publication-link">Read Paper →</a>
+            </div>
         </div>
     </section>
 
