@@ -1,52 +1,40 @@
 # Kathan Joshi's Portfolio Website  
-**Live Demo:** https://kathan03.github.io/  
+**Live Demo:** [https://kathan03.github.io/](https://kathan03.github.io/)
 
-Welcome to the GitHub repository for my professional portfolio showcasing expertise in machine learning, data science, and artificial intelligence. As a Graduate Research Assistant at Pennsylvania State University and former Data Scientist at Sajal Industries, this site demonstrates my technical capabilities through project showcases and professional achievements.
+Welcome to the GitHub repository for my personal portfolio website. This project is built as an interactive, responsive site to showcase my work in machine learning, data science, and artificial intelligence. The website emphasizes a modern design and smooth navigation to help visitors explore my projects and technical interests.
 
-## 🚀 About This Portfolio
+## 🚀 About This Project
 
-This repository contains the complete source code for my interactive portfolio highlighting:
-
-- **Machine Learning Expertise**: Implementation of hospital LOS prediction models (12% performance boost) and PyTorch defect detection systems (92% accuracy)
-- **AI Innovations**: BERT-based sentiment analysis and LSTM fake news detection implementations
-- **Data Engineering**: AWS-powered big data pipelines handling TB-scale datasets
-- **Technical Leadership**: TA experience for ML/NLP courses and production-grade system architecture
-
-Key components include:
-- Responsive UI/UX design
-- Project showcases with code samples
-- Interactive tech stack visualization
-- Professional timeline presentation
+This repository contains the complete source code for my portfolio website, which is designed to:
+- Deliver a clean, modern interface with responsive design.
+- Showcase selected projects through interactive demos and code samples.
+- Highlight my technical skills and contributions in an engaging manner.
+- Offer intuitive navigation and seamless user experience.
 
 ## 🛠 Technologies Used
-- **Languages**: Python, SQL, Java, C/C++
-- **ML Frameworks**: PyTorch, TensorFlow, SKlearn, NLTK, SpaCy
-- **Cloud & Big Data**: AWS SageMaker, Hadoop, Spark, Docker
-- **Visualization**: Power BI, Tableau, Matplotlib
-- **Web**: HTML5, CSS3, JavaScript, ScrollReveal.js
 
-## 🔍 Featured Projects
-1. **Multiclass Sentiment Analyzer**  
-   Fine-tuned BERT model achieving 23% higher classification accuracy on Twitter data
+- **Web Development:** HTML5, CSS3, JavaScript
+- **UI/UX Enhancements:** ScrollReveal.js, CSS animations, Responsive design techniques
 
-2. **Fake News Detection System**  
-   LSTM network with 99.69% accuracy using optimized NLP preprocessing
+## 🔍 Features
 
-3. **Hospital LOS Predictor**  
-   Ensemble ML system improving patient stay predictions by 38%
+- **Interactive Project Showcases:** Detailed project sections with links to live demos and code repositories.
+- **Dynamic Visualizations:** Engaging visual elements that bring my projects to life.
+- **Responsive Design:** Optimized for desktops, tablets, and mobile devices.
+- **Modern UI/UX:** A clean, minimalistic design with smooth transitions and animations.
+- **Contact Section:** Built-in contact form and direct links to my professional social profiles.
 
-## 📚 Educational Highlights
-- **M.S. Computer Science** - Pennsylvania State University (GPA: 3.63/4.00)  
-  *Courses: Advanced Machine Learning, NLP, Distributed Systems*
-  
-- **B.Tech Computer Science** - Ahmedabad University (GPA: 3.41/4.00)  
-  *Courses: Computer Vision, Big Data Analytics*
+## 📂 Project Structure
+
+- **index.html:** Main entry point of the portfolio website.
+- **assets/**: Contains all images and other supporting assets.
+- **style.css**: Houses styling for the website.
+- **script.js**: Javascript file
+- **README.md:** This file.
 
 ## 📬 Connect With Me
-[![LinkedIn](https://img.shields.io/badge/LinkedIn-Connect-blue?style=flat&logo=linkedin)](https://linkedin.com/in/kjoshi03/)
+
+Feel free to explore the repository and check out the live demo. If you have any feedback, suggestions, or collaboration ideas, please get in touch:
+
+[![LinkedIn](https://img.shields.io/badge/LinkedIn-Connect-blue?style=flat&logo=linkedin)](https://linkedin.com/in/kjoshi03/)  
 [![Email](https://img.shields.io/badge/Email-Contact-red?style=flat&logo=gmail)](mailto:joshikathan03@gmail.com)
-
-Let's collaborate on cutting-edge ML solutions or discuss research opportunities!
-
-## License
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
