@@ -103,20 +103,89 @@ function initParticles() {
 // Initialize particles
 window.addEventListener('load', initParticles);
 
-// Theme toggle functionality
-document.querySelector('.theme-toggle').addEventListener('click', () => {
-    document.body.classList.toggle('light-theme');
-    const isLight = document.body.classList.contains('light-theme');
-    localStorage.setItem('theme', isLight ? 'light' : 'dark');
-});
+// 5-Theme cycling functionality
+const themes = ['dark', 'light', 'purple', 'emerald', 'sunset'];
+let currentThemeIndex = 0;
 
-// Initialize theme
+// Get saved theme or default to dark
 const savedTheme = localStorage.getItem('theme') || 'dark';
-document.body.classList.toggle('light-theme', savedTheme === 'light');
+currentThemeIndex = themes.indexOf(savedTheme);
+if (currentThemeIndex === -1) currentThemeIndex = 0;
+
+// Apply theme function
+function applyTheme(themeName) {
+    // Remove all theme classes
+    document.body.classList.remove('theme-light', 'theme-purple', 'theme-emerald', 'theme-sunset');
+
+    // Apply the selected theme class
+    if (themeName !== 'dark') {
+        document.body.classList.add(`theme-${themeName}`);
+    }
+}
+
+// Apply saved theme on load
+applyTheme(savedTheme);
+
+// Theme toggle click handler - cycles through all 5 themes
+document.getElementById('theme-toggle').addEventListener('click', () => {
+    // Cycle to next theme
+    currentThemeIndex = (currentThemeIndex + 1) % themes.length;
+    const newTheme = themes[currentThemeIndex];
+
+    // Apply theme
+    applyTheme(newTheme);
+
+    // Save to localStorage
+    localStorage.setItem('theme', newTheme);
+});
 
 // Handle window resize
 window.addEventListener('resize', () => {
     if (window.innerWidth > 768 && navbar.classList.contains('active')) {
         closeMenu();
+    }
+});
+
+// Mouse-following particle cluster effect
+const mouseParticles = [];
+const maxMouseParticles = 6;
+
+function createMouseParticle(x, y) {
+    const particle = document.createElement('div');
+    particle.className = 'mouse-particle';
+    particle.style.left = x + 'px';
+    particle.style.top = y + 'px';
+
+    // Random offset for cluster effect
+    const offsetX = (Math.random() - 0.5) * 20;
+    const offsetY = (Math.random() - 0.5) * 20;
+    particle.style.setProperty('--offset-x', offsetX + 'px');
+    particle.style.setProperty('--offset-y', offsetY + 'px');
+
+    document.body.appendChild(particle);
+    mouseParticles.push(particle);
+
+    // Remove old particles
+    if (mouseParticles.length > maxMouseParticles) {
+        const oldParticle = mouseParticles.shift();
+        oldParticle.remove();
+    }
+}
+
+// Track mouse movement
+let lastX = 0;
+let lastY = 0;
+let particleTimer = null;
+
+document.addEventListener('mousemove', (e) => {
+    const distance = Math.sqrt(
+        Math.pow(e.clientX - lastX, 2) + Math.pow(e.clientY - lastY, 2)
+    );
+
+    // Only create particle if mouse moved significantly
+    if (distance > 10) {
+        createMouseParticle(e.clientX, e.clientY);
+        lastX = e.clientX;
+        lastY = e.clientY;
     }
 });
