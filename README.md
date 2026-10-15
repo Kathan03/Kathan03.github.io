@@ -1,40 +1,42 @@
-# Kathan Joshi's Portfolio Website  
-**Live Demo:** [https://kathan03.github.io/](https://kathan03.github.io/)
+# Kathan Joshi portfolio
 
-Welcome to the GitHub repository for my personal portfolio website. This project is built as an interactive, responsive site to showcase my work in machine learning, data science, and artificial intelligence. The website emphasizes a modern design and smooth navigation to help visitors explore my projects and technical interests.
+React and Vite portfolio for **https://kathan03.github.io/**.
 
-## 🚀 About This Project
+## Local development
 
-This repository contains the complete source code for my portfolio website, which is designed to:
-- Deliver a clean, modern interface with responsive design.
-- Showcase selected projects through interactive demos and code samples.
-- Highlight my technical skills and contributions in an engaging manner.
-- Offer intuitive navigation and seamless user experience.
+Use Node 22.12 or newer.
 
-## 🛠 Technologies Used
+```sh
+npm ci
+npm run dev
+```
 
-- **Web Development:** HTML5, CSS3, JavaScript
-- **UI/UX Enhancements:** ScrollReveal.js, CSS animations, Responsive design techniques
+## Production preview
 
-## 🔍 Features
+```sh
+npm run build:pages
+npm run preview -- --host 127.0.0.1 --port 4189
+```
 
-- **Interactive Project Showcases:** Detailed project sections with links to live demos and code repositories.
-- **Dynamic Visualizations:** Engaging visual elements that bring my projects to life.
-- **Responsive Design:** Optimized for desktops, tablets, and mobile devices.
-- **Modern UI/UX:** A clean, minimalistic design with smooth transitions and animations.
-- **Contact Section:** Built-in contact form and direct links to my professional social profiles.
+The production website is the static contents of `dist/client`. No server, API key, environment variable, or database is required.
 
-## 📂 Project Structure
+## GitHub Pages deployment
 
-- **index.html:** Main entry point of the portfolio website.
-- **assets/**: Contains all images and other supporting assets.
-- **style.css**: Houses styling for the website.
-- **script.js**: Javascript file
-- **README.md:** This file.
+In this repository's **Settings > Pages > Build and deployment**, set **Source** to **GitHub Actions** once. Keep the repository name `Kathan03.github.io`; the public URL remains **https://kathan03.github.io/**.
 
-## 📬 Connect With Me
+The workflow in `.github/workflows/pages.yml` installs the locked dependencies, builds with `npm run build:pages`, and publishes only `dist/client` after a push to `main`. It can also be started from the Actions tab with **Run workflow**. Vite uses the root base `/`, matching this user-site URL.
 
-Feel free to explore the repository and check out the live demo. If you have any feedback, suggestions, or collaboration ideas, please get in touch:
+Do not publish the raw source directory as a static branch site: `index.html` loads source modules during development, and the production build generates the browser-ready HTML and assets.
 
-[![LinkedIn](https://img.shields.io/badge/LinkedIn-Connect-blue?style=flat&logo=linkedin)](https://linkedin.com/in/kjoshi03/)  
-[![Email](https://img.shields.io/badge/Email-Contact-red?style=flat&logo=gmail)](mailto:joshikathan03@gmail.com)
+The optional Sites build hooks remain available through `npm run build` and `npm run test:sites`. They are not uploaded by the GitHub Pages workflow.
+
+## Content and privacy
+
+- Career and project content: `src/content.js`.
+- Recommendation: `src/recommendation.js`.
+- Public contact: `kathanjoshi03@gmail.com`.
+- Dark is the default; a visitor's saved theme choice is remembered.
+- Resume downloads and phone numbers are excluded from the website.
+- Original portrait, approved illustrations, theme emblems, issuer logos, and fonts are bundled locally.
+
+Private design drafts, local tool settings, and the previous website backup are outside this repository. Original tool logo attribution is retained in `docs/skill-logo-sources.json` and `docs/DEVICON-LICENSE.txt`.

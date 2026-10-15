@@ -1,0 +1,22 @@
+{
+  "desktop": {
+    "emailLinks": [
+      "mailto:kathanjoshi03@gmail.com",
+      "mailto:kathanjoshi03@gmail.com"
+    ],
+    "heroFont": "\"Anthropic Display\", Georgia, serif",
+    "pageWidth": 1209,
+    "theme": "dark",
+    "visibleImagesLoaded": true,
+    "width": 1224
+  },
+  "experienceDisclosure": true,
+  "mobile": {
+    "contactEmail": "kathanjoshi03@gmail.com",
+    "menuVisible": true,
+    "pageWidth": 375,
+    "theme": "dark",
+    "width": 390
+  },
+  "logs": []
+}

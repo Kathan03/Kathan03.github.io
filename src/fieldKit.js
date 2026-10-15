@@ -1,0 +1,17 @@
+export const fieldKit = [
+  { id: 'python', name: 'Python', logos: ['python.svg'] },
+  { id: 'frontend', name: 'TypeScript / React', logos: ['typescript.svg', 'react.svg'] },
+  { id: 'apis', name: 'FastAPI / APIs', logos: ['fastapi.svg'] },
+  { id: 'sql', name: 'SQL / PostgreSQL', logos: ['postgresql.svg'] },
+  { id: 'langgraph', name: 'LangGraph', logos: ['langgraph.svg'], wideLogo: true },
+  { id: 'crewai', name: 'CrewAI', logos: ['crewai.svg'] },
+  { id: 'agno', name: 'Agno', logos: ['agno.svg'] },
+  { id: 'retrieval', name: 'RAG / vector search', icon: 'retrieval' },
+  { id: 'mcp', name: 'MCP / tool calling', icon: 'mcp' },
+  { id: 'architecture', name: 'Agent architecture', icon: 'architecture', note: 'Knowledge' },
+  { id: 'evaluation', name: 'Evaluation / guardrails', icon: 'evaluation' },
+  { id: 'aws', name: 'AWS / cloud', logos: ['aws.svg'] },
+  { id: 'delivery', name: 'Docker / CI/CD', logos: ['docker.svg'] },
+  { id: 'salesforce', name: 'Salesforce / Agentforce', logos: ['salesforce.svg'] },
+  { id: 'discovery', name: 'Discovery / delivery', icon: 'discovery' },
+];
